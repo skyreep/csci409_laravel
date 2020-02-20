@@ -19,6 +19,10 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    public function reservation() {
+        return $this->hasMany('App\Models\Reservation');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
