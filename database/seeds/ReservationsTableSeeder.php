@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Reservation;
+
 use Illuminate\Database\Seeder;
 
 class ReservationsTableSeeder extends Seeder
@@ -17,36 +19,36 @@ class ReservationsTableSeeder extends Seeder
                     'user_id' => '1',
                     'room_id' => '1',
                     'num_of_guests' => '4',
-                    'arrival' => '5/18/20',
-                    'departure' => '5/28/20'
+                    'arrival' => '2020-05-18',
+                    'departure' => '2020-05-28'
                 ],
                 [
                     'user_id' => '1',
                     'room_id' => '2',
                     'num_of_guests' => '1',
-                    'arrival' => '5/10/20',
-                    'departure' => '5/12/20'
+                    'arrival' => '2020-05-10',
+                    'departure' => '2020-05-12'
                 ],
                 [
                     'user_id' => '1',
                     'room_id' => '3',
                     'num_of_guests' => '3',
-                    'arrival' => '5/6/20',
-                    'departure' => '5/7/20'
+                    'arrival' => '2020-05-06',
+                    'departure' => '2020-05-07'
                 ],
                 [
                     'user_id' => '1',
                     'room_id' => '4',
                     'num_of_guests' => '2',
-                    'arrival' => '5/12/20',
-                    'departure' => '5/15/20'
+                    'arrival' => '2020-05-12',
+                    'departure' => '2020-05-15'
                 ],
                 [
                     'user_id' => '1',
                     'room_id' => '2',
                     'num_of_guests' => '2',
-                    'arrival' => '5/20/20',
-                    'departure' => '5/24/20'
+                    'arrival' => '2020-05-20',
+                    'departure' => '2020-05-24'
                 ]
             ];
 
