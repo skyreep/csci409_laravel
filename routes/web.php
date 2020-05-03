@@ -11,26 +11,21 @@
 |
 */
 
+/*Route::get('/', function () {
+    return view('welcome');
+});
+*/
+
 Route::get('/', function(){
     return '/ route';
 });
-
 Route::get('/hotels', 'HotelController@index');
 
-Route::prefix('reservations')->group(function () {
-    Route::get('reservations/create{id}', 'HotelController@create');
+Route::group(['prefix' => 'dashboard'], function() {
+    Route::get('/', function(){
+        return '/dashboard route';
+    });
+    Route::get('reservations/create/{id}', 'ReservationController@create');
     Route::resource('reservations', 'ReservationController')->except('create');
-});
-
-Route::post('reservations', function(){
-    return 'Creating reservation';
-});
-
-Route::put('reservations/{id}', function(){
-    return 'Updating reservation id”';
-});
-
-Route::delete('reservations/{id}', function(){
-    return 'Deleting reservation id”';
 });
 
