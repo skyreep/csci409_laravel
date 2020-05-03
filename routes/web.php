@@ -15,30 +15,11 @@ Route::get('/', function(){
     return '/ route';
 });
 
-Route::get('/', function(){
-    return '/hotels route';
-});
+Route::get('/hotels', 'HotelController@index');
 
 Route::prefix('reservations')->group(function () {
-    Route::get('/', function () {
-        return 'Showing users homepage';
-    });
-
-    Route::get('reservations', function () {
-        return 'Showing users reservations';
-    });
-
-    Route::get('reservations/new', function () {
-        return 'Showing form to create reservations';
-    });
-
-    Route::get('reservations/{id}', function () {
-        return 'Showing reservation id';
-    });
-
-    Route::get('reservations/{id}/edit', function () {
-        return 'Showing edit form for reservation id';
-    });
+    Route::get('reservations/create{id}', 'HotelController@create');
+    Route::resource('reservations', 'ReservationController')->except('create');
 });
 
 Route::post('reservations', function(){
@@ -52,3 +33,4 @@ Route::put('reservations/{id}', function(){
 Route::delete('reservations/{id}', function(){
     return 'Deleting reservation id”';
 });
+
