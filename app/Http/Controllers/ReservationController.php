@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Hotel;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
-class HotelController extends Controller
+class ReservationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class HotelController extends Controller
     public function index()
     {
         //
-        $hotels = Hotel::get();
-        return view('hotels', $hotels);
+        $reservations = Reservation::orderBy('arrival', 'asc')->get();
+
+        return view('reservations')->with('reservations', $reservations);
     }
 
     /**
@@ -43,10 +44,10 @@ class HotelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Hotel  $hotel
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function show(Hotel $hotel)
+    public function show(Reservation $reservation)
     {
         //
     }
@@ -54,10 +55,10 @@ class HotelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Hotel  $hotel
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hotel $hotel)
+    public function edit(Reservation $reservation)
     {
         //
     }
@@ -66,10 +67,10 @@ class HotelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Hotel  $hotel
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hotel $hotel)
+    public function update(Request $request, Reservation $reservation)
     {
         //
     }
@@ -77,10 +78,10 @@ class HotelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Hotel  $hotel
+     * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hotel $hotel)
+    public function destroy(Reservation $reservation)
     {
         //
     }
